@@ -1,0 +1,356 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d; /* Dark background */
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #0d0d0d;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    color: #ffd700; /* Golden color */
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover,
+.navbar .nav-links li a.active {
+    color: #ffd700;
+}
+
+/* GitHub Link */
+.navbar .github-link {
+    ;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    margin-right: 60px;
+   
+    
+}
+
+.navbar .github-link:hover {
+    color: #ffd700;
+}
+
+/* Home Section */
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0;
+    background-color: #0d0d0d; /* Latar belakang hitam */
+}
+
+.home-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak kecil antara teks dan foto */
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Teks di sebelah kiri */
+.home-content {
+    flex: 1;
+    text-align: left;
+    margin: 0; /* Hilangkan margin tambahan */
+}
+
+.home-content .hello {
+    font-size: 1.5rem;
+    color: #ffd700; /* Kuning */
+    margin: 0;
+}
+
+.home-content .name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff; /* Putih */
+    margin: 5px 0; /* Jarak minimal */
+}
+
+.home-content .profession {
+    font-size: 1.8rem;
+    margin: 5px 0; /* Jarak minimal */
+}
+
+.home-content .profession .typing-animation {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.8rem;
+    border-right: 3px solid #ffd700;
+    background: linear-gradient(to right, #fff,rgb(255, 234, 114)); /* Gradasi putih ke kuning */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: typing 5s steps(30, end) , blink 0.7s step-end;
+    animation-delay: 0s, 6s  ; /* Blink dimulai setelah selesai mengetik */
+}
+
+.home-content .welcome {
+    font-size: 1rem;
+    color: #aaa; /* Abu-abu */
+    margin: 5px 0; /* Jarak minimal */
+}
+
+/* Foto di sebelah kanan */
+.home-image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%; /* Membuat foto berbentuk lingkaran */
+    border: 5px solid #ffd700; /* Border kuning */
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); /* Efek bercahaya */
+}
+
+/* Animasi mengetik */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 17ch; /* Panjang teks 'Mechanical Engineer' */
+    }
+}
+
+/* Efek garis kedip */
+@keyframes blink {
+    from {
+        border-right-color: #ffd700;
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/* About Section */
+.about-section {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a; /* Dark gray background */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin-bottom: 60px;
+}
+
+.about-photo img {
+    width:250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 0s solid #ffd700;
+    margin-right: 40px;
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffd700;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #ccc;
+}
+
+/* Animasi Fade-In untuk Tab About */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-section.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animasi untuk Foto (Dari Bawah ke Atas) */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(200px); /* Mulai dari bawah */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Menuju posisi asli */
+    }
+}
+
+/* Animasi untuk Teks (Dari Kanan ke Kiri) */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(200px); /* Mulai dari kanan */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Menuju posisi asli */
+    }
+}
+
+/* Tambahkan Kelas untuk Foto */
+.about-photo.slide-up {
+    animation: slideInUp 0.8s ease-in-out;
+}
+
+/* Tambahkan Kelas untuk Teks */
+.about-text.slide-left {
+    animation: slideInLeft 1.5s ease-in-out;
+}
+
+
+/* Skills Section */
+.skills-section {
+    text-align: center;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.skills-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffd700;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Skill Card */
+.skill-card {
+    display: flex; /* Membuat konten dalam satu baris */
+    align-items: center;
+    background-color: #1a1a1a; /* Background dark */
+    color: #ffd700; /* Teks kuning */
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: 200px; /* Lebar tetap */
+    text-align: left; /* Rata kiri untuk teks */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* Dibutuhkan untuk skill level */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px); /* Naik sedikit saat hover */
+    transform: scale(1.1);
+
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6); /* Efek bayangan lebih besar */
+}
+
+/* Ikon di Kiri */
+.skill-icon {
+    width: 45px;
+    height: 45px;
+    transition: transform 0.3s ease;
+    margin-right: 15px; /* Jarak antara ikon dan teks */
+}
+
+/* Informasi Skill di Kanan */
+.skill-info {
+    flex: 1;
+}
+
+.skill-name {
+    transform: translateY(0%) ;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Tingkat Kemahiran */
+.skill-level {
+    position: absolute;
+    bottom: -30px; /* Letakkan di bawah kotak */
+    left: 50%;
+    transform: translateX(-40px);
+    opacity: 0;
+    visibility: hidden;
+    background-color: #ffd700; /* Background untuk tingkat kemahiran */
+    color: #1a1a1a; /* Warna teks hitam */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.skill-card:hover .skill-name {
+    transform: translateY(-65%) ;
+    transition: opacity 0.3s easy;
+
+}
+
+.skill-card:hover .skill-icon {
+    transform:scale(1.1);
+    transition: transform 0.3s ease;
+}
+/* Tampilkan Tingkat Kemahiran saat Hover */
+.skill-card:hover .skill-level {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-40px) translateY(-25px); /* Naikkan sedikit */
+}
